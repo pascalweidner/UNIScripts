@@ -1,5 +1,6 @@
-from sympy import Matrix, symbols, linsolve
+from sympy import Matrix, symbols, linsolve, pprint
 import numpy as np
+
 
 def generate_infinite_solution_lgs(m, n, max_rank=None):
     """
@@ -33,12 +34,13 @@ def generate_infinite_solution_lgs(m, n, max_rank=None):
 
     return A, b, solution, Matrix(x_true)
 
+
 if __name__ == "__main__":
     A, b, solution, x_true = generate_infinite_solution_lgs(m=3, n=5, max_rank=2)
     print("A =")
-    print(A)
+    pprint(A)
     print("\nb =")
-    print(b)
+    pprint(b)
     print("\nKnown solution (used to generate b):")
     print(x_true)
     print("\nSymbolic solution:")
